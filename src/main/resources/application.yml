@@ -1,0 +1,33 @@
+server:
+  port: 9087
+
+spring:
+  application:
+    name: glogin
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        enabled: true
+        register: true
+        deregister: true
+        prefer-ip-address: true
+        health-check-interval: 5s
+        health-check-critical-timeout: 30s
+        health-check-path: /spring/boot/status
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port} # 应用名称+服务器IP+端口
+        service-name: glogin.404.ms
+        tags: backend
+
+app:
+  secret: thought-it-was-an-issue-with-jjlth-check-wt-and--timeoutrned-before-was-speaking-of-bits-a-bafdsfse-64gsfew89ryofdhfguosgbdfsuf-as-behealth-check-critical-timeouting-retuhealth-check-crhealth-check-critical-timeoutiticals-well
+  github:
+    app_key: Iv1
+    app_secret: e98ede30f64bbe0a55ca8a9fcb4fe16b
+  dingding:
+    app_key:
+    app_secret:
+  wework:
+    app_key:
+    app_secret:
