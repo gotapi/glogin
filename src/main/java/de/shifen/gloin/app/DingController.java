@@ -10,6 +10,7 @@ import me.zhyd.oauth.request.AuthGithubRequest;
 import me.zhyd.oauth.request.AuthRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +26,7 @@ import java.net.Proxy;
  */
 @Slf4j
 @RestController
+@RequestMapping("/dingding")
 public class DingController extends Controller{
     @Value("app.dingding.app_key")
     String appKey;

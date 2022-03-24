@@ -48,10 +48,6 @@ public class GithubController extends Controller{
     }
 
 
-    @GetMapping("/cookies")
-    public Object showCookie(HttpServletRequest request){
-        return CookieToolkit.readCookieMap(request);
-    }
 
     @GetMapping("/callback")
     public void callback(HttpServletRequest request,HttpServletResponse response,

@@ -25,7 +25,9 @@ public class CookieToolkit implements CommandLineRunner {
     public static final String TOKEN_FIELD="_wjToken";
     public static final String ID_FIELD="_wjId";
 
-    static String domain = "404.ms";
+    static String cookieDomain;
+    @Value("${app.domain}")
+    String domain;
 
 
     @Value("${app.secret}")
@@ -35,6 +37,7 @@ public class CookieToolkit implements CommandLineRunner {
     @Override
     public void run(String... args) {
         JsonWebTokenUtil.setDefaultSecretKey(secret);
+        cookieDomain = domain;
     }
 
     /**
@@ -91,7 +94,7 @@ public class CookieToolkit implements CommandLineRunner {
         }
         // 单位：秒
         cookie.setMaxAge(time);
-        cookie.setDomain(domain);
+        cookie.setDomain(cookieDomain);
         // 将Cookie添加到Response中,使之生效
         response.addCookie(cookie);
         // addCookie后，如果已经存在相同名字的cookie，则最新的覆盖旧的cookie
